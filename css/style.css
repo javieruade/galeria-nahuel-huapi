@@ -1,0 +1,299 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333333;
+    padding-top: 130px; 
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header {
+    position: fixed;       
+    top: 0;                
+    left: 0;               
+    width: 100%;           
+    background-color: #1a365d; 
+    color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    z-index: 1000;         
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: #cbd5e0;
+    margin-bottom: 0.75rem;
+}
+
+
+nav ul {
+    list-style: none;      
+    display: flex;         
+    flex-wrap: wrap;       
+    justify-content: center;     gap: 0.5rem;           
+}
+
+
+nav a {
+    display: inline-block;
+    text-decoration: none; 
+    background-color: #2b6cb0; 
+    color: #ffffff;        
+    padding: 0.4rem 0.8rem; 
+    border-radius: 4px;    
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease; 
+}
+
+
+nav a:hover {
+    background-color: #4299e1; 
+}
+
+/* --- 3. Contenedor principal --- */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0.25rem;
+}
+
+/* --- 4. Banner --- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.imagen-banner {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Sección de la Galería (Grilla de Tarjetas) --- */
+.galeria {
+    margin-top: 2.5rem;
+}
+
+.galeria h2 {
+    font-size: 1.6rem;
+    color: #1a365d;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #2b6cb0;
+    padding-bottom: 0.5rem;
+}
+
+/* Grilla responsive que se adapta sola al ancho de pantalla */
+.contenedor-grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Estilo de cada tarjeta */
+.tarjeta {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden; /* Evita que la imagen sobresalga de las esquinas curvas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px); /* Sutil levante visual al pasar el mouse */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover; /* Mantiene proporciones sin aplastarse */
+}
+
+/* Contenidos de texto dentro de la tarjeta */
+.tarjeta h3 {
+    font-size: 1.15rem;
+    color: #1a365d;
+    margin: 1rem 1rem 0.5rem 1rem;
+}
+
+.tarjeta p {
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.4;
+    margin: 0 1rem 1.2rem 1rem;
+    flex: 1; /* Empuja el botón al fondo para que queden todos alineados */
+}
+
+/* Botón "Ver detalle" */
+.tarjeta a {
+    display: block;
+    text-align: center;
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.6rem;
+    margin: 0 1rem 1rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.tarjeta a:hover {
+    background-color: #1a365d;
+}
+
+/* --- Maquetación de la Página de Detalle (Flexbox) --- */
+.detalle-elemento {
+    display: flex;
+    flex-wrap: wrap; /* En móviles se apila una columna sobre la otra */
+    gap: 2rem;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-top: 1rem;
+}
+
+/* Columna Izquierda: Imagen */
+.columna-visual {
+    flex: 1 1 450px; /* Base de 450px, pero flexible */
+}
+
+.imagen-detalle {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Columna Derecha: Información */
+.columna-info {
+    flex: 1 1 350px; /* Base de 350px, flexible */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.columna-info h2 {
+    font-size: 1.5rem;
+    color: #1a365d;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #2b6cb0;
+    padding-bottom: 0.4rem;
+}
+
+.descripcion-texto {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444444;
+    margin-bottom: 1.5rem;
+}
+
+/* Ficha técnica */
+.ficha-datos {
+    background-color: #edf2f7;
+    border-left: 4px solid #2b6cb0;
+    padding: 1rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1.5rem;
+}
+
+.ficha-datos h3 {
+    font-size: 1rem;
+    color: #1a365d;
+    margin-bottom: 0.5rem;
+}
+
+.ficha-datos ul {
+    list-style: none;
+    font-size: 0.85rem;
+    color: #4a5568;
+}
+
+.ficha-datos li {
+    margin-bottom: 0.4rem;
+}
+
+/* Botón Volver */
+.boton-volver {
+    display: inline-block;
+    align-self: flex-start;
+    text-decoration: none;
+    background-color: #e2e8f0;
+    color: #1a365d;
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.boton-volver:hover {
+    background-color: #cbd5e0;
+}
+
+footer {
+    background-color: #1a365d; 
+    color: #cbd5e0;            
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;          
+    border-top: 3px solid #2b6cb0; 
+    font-size: 0.85rem;
+}
+
+.contenido-footer p {
+    margin-bottom: 0.3rem;
+}
+
+.contenido-footer p:last-child {
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    color: #a0aec0;
+}
+
+/* --- Adaptación Responsive con Media Queries --- */
+
+@media (max-width: 768px) {
+    body {
+        
+        padding-top: 170px;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    .detalle-elemento {
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+}
