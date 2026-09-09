@@ -1,6 +1,6 @@
 # Galería Visual — Paisajes del Parque Nacional Nahuel Huapi
 
-Proyecto desarrollado para la materia **Diseño y Desarrollo Web**. Consiste en un sitio web estático estructurado con HTML5 semántico y maquetado con CSS3 (Flexbox y CSS Grid), enfocado en la exhibición y registro fotográfico de paisajes y entornos naturales del Parque Nacional Nahuel Huapi (Bariloche, Río Negro, Argentina).
+Proyecto desarrollado para la materia **Diseño y Desarrollo Web** de UADE (Universidad Argentina de la Empresa). Consiste en un sitio web estático estructurado con HTML5 semántico y maquetado con CSS3 (Flexbox y CSS Grid), enfocado en la exhibición y registro fotográfico de paisajes y entornos naturales del Parque Nacional Nahuel Huapi (Bariloche, Río Negro, Argentina).
 
 ---
 
